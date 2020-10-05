@@ -21,4 +21,11 @@ provider "aws" {
 resource "aws_codecommit_repository" "test" {
   repository_name = "Testing"
   description     = "This is a testing repository for AWS Developer Tools."
+
+  tags = {
+    managed_by  = "tfstate"
+    poc         = "tucker.m.mccoy"
+    project     = "aws-developer-tools"
+    environment = "test"
+  }
 }
